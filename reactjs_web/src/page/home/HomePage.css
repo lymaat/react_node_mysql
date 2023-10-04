@@ -1,0 +1,11 @@
+input {
+    padding: 10px;
+    margin:5px;
+}
+
+.btnAdd {
+    background-color: black;
+    width: 200px;
+    font-weight: bold;
+    padding: 20px;
+}

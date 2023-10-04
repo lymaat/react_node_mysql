@@ -1,0 +1,14 @@
+.textTitle {
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+}
+.textNormal{
+  font-size: 16px;
+  color: rgb(72, 70, 70);
+}
+
+.iconNormal {
+  font-size: 18px;
+  color: rgb(72, 70, 70);
+}

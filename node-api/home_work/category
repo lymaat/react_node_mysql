@@ -1,0 +1,17 @@
+
+Home Work
+# Create a table 
+    category 
+        category_id // int PK auto 
+        name  // varchar(120) not null
+        parent_id // int
+        status // boolean defualt true
+        create // datetime 
+# Create api category
+    - list all 
+    - list one 
+    - create 
+    - update 
+    - remove 
+    - chage_status
+    

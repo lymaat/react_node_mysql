@@ -1,0 +1,98 @@
+import {useState} from "react";
+import "./HomePage.css"
+import ProductList from "../../component/list/ProductList"; // import component
+import nit from "../../assets/logo/nit.jpeg"
+import coca from "../../assets/product/coca.png"
+function HomePage (){
+    const [product,setProduct] = useState([
+        {
+            id : 101,
+            name : "Macbook Pro 2016",
+            price : 1200,
+            desc : "512 SSD, RAM 8GB",
+            image : nit
+        },
+        {
+            id : 102,
+            name : "Macbook Air 2017",
+            price : 1300,
+            desc : "256 SSD, RAM 8GB",
+            image : coca
+        },
+        {
+            id : 102,
+            name : "Macbook Air 2017",
+            price : 1300,
+            desc : "256 SSD, RAM 8GB",
+            image : coca
+        },
+        {
+            id : 102,
+            name : "Macbook Air 2017",
+            price : 1300,
+            desc : "256 SSD, RAM 8GB",
+            image : coca
+        },
+        {
+            id : 102,
+            name : "Macbook Air 2017",
+            price : 1300,
+            desc : "256 SSD, RAM 8GB",
+            image : coca
+        },
+    ])
+    const MyElement = () => <h1>Hell React JSX  (Javascript XML)</h1>
+
+    const Demo = () => (
+        <div style={{padding:10,backgroundColor:'pink',marginTop:10}}>
+            Hello Demo
+            <p>P </p>
+            <h1>P</h1>
+        </div>
+    )
+
+    return (
+        <div>
+            {/* <h1 >List product</h1>
+            <img 
+                src="1.png"
+                width={10}
+                height={20}
+            />
+            <img 
+                src="2.png"
+                width={30}
+                height={30}
+            /> */}
+            {/* <ProductList 
+                name = "Macbook 2020"
+                price = {2000}
+            /> 
+            <ProductList 
+                name = "Macbook 2022"
+                price = {1001}
+            /> 
+            <ProductList 
+                name = "Macbook 2023"
+                price = {3000}
+            />  */}
+            {product.map((item,index)=>{
+                return (
+                    <ProductList
+                        key={index} 
+                        // {...item}
+                        name = {item.name}
+                        price = {item.price}
+                        desc = {item.desc}
+                        image= {item.image}
+                    /> 
+                )
+            })}
+          
+            {/* <ProductList /> 
+            <ProductList />  */}
+        </div>
+    )
+}
+
+export default HomePage

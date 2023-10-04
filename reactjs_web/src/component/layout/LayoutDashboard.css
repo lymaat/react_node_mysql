@@ -1,0 +1,40 @@
+
+.mainHeaderDashboard{
+    background-color: rgb(211, 211, 211) !important;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.brandContain{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.txtBrand{
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.txtSubBrand{
+    font-size: 12px;
+    color: #888;
+}
+
+.menu{
+    list-style-type: none;
+    display: flex;
+}
+
+.menuItem {
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menuItem:hover{
+    background-color: antiquewhite;
+    text-decoration: underline;
+}

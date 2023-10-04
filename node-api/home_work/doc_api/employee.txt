@@ -1,0 +1,39 @@
+# Employee
+    - getall
+        - url : server + employee 
+        - method : get 
+    - getone
+        - url : server + employee/:id
+        - method : get 
+    - create 
+        - url : server + employee
+        - method : post 
+        - param json 
+            {
+                "firstname" : "Chan", // required
+                "lastname" : "Boran", // required
+                "tel" : "0998885566", // required
+                "email" : "boran@gmail.com",
+                "base_salary" : "1000",
+                "address" : "#222 st....",
+                "province" : "BB",
+                "country" : "Cambodia"
+            }
+    - update 
+        - url : server + employee
+        - method : put 
+        - param json 
+           {
+                "employee_id":1,
+                "firstname" : "Chan", // required
+                "lastname" : "Boran", // required
+                "tel" : "0998885566", // required
+                "email" : "boran@gmail.com",
+                "base_salary" : "1000",
+                "address" : "#222 st....",
+                "province" : "BB",
+                "country" : "Cambodia"
+            }
+    - delete
+        - url : server + employee/:id
+        - method : delete 

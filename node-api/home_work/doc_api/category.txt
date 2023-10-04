@@ -1,0 +1,31 @@
+# Category
+    - getall
+        - url : server + category 
+        - method : get 
+    - getone
+        - url : server + category/:id
+        - method : get 
+    - create 
+        - url : server + category
+        - method : post 
+        - param json 
+            {
+                "name" : "", // required
+                "description" : "",
+                "parent_id" : null,
+                "status" : 1
+            }
+    - update 
+        - url : server + category
+        - method : put 
+        - param json 
+            {
+                "category_id": 1, // required
+                "name" : "", // required
+                "description" : "",
+                "parent_id" : null,
+                "status" : 1
+            }
+    - delete
+        - url : server + category/:id
+        - method : delete 

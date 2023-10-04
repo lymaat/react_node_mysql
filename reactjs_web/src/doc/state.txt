@@ -1,0 +1,169 @@
+import {useState} from "react";
+import "./HomePage.css"
+
+function HomePage (){
+    // state in React, import, declare state, use state , change value state
+    // const [state_name,seter] = useSate(init)
+
+    const [name,setName] = useState("Bona")
+    const [gender,setGender] = useState("Male")
+    const [age,setAge] = useState(18)
+    const [course,setCourse] = useState(["React","ReactNative"])
+    const [product,setProduct] = useState({
+        id:101,
+        pname:"Coca",
+        price:2,
+        qty:2
+    })
+
+    const [username,setUsername] = useState("")
+    const [password,setPassword] = useState("")
+
+    const [x,setX] = useState(0)
+    const [y,setY] = useState(0)
+    const [result,setResult] = useState(0)
+
+    const [box,setBox] = useState([])
+    
+    // var x  = 100
+    const onChangeInfo = () => { // arrow function
+        setName("Sokha")
+        setGender("Female")
+        setAge(20)
+    }
+
+    const onLogin = () => {
+        //past u, p
+        alert("Your username :"+username+" and password: "+password)
+    }
+
+    const onChangeUsername = (event) => {
+        setUsername(event.target.value)
+    }
+
+    const onChangePassword = (event) => {
+        setPassword(event.target.value)
+    }
+
+    const onChageX = (event) => {
+        setX(event.target.value)
+    }
+
+    const onChageY = (event) => {
+        setY(event.target.value) // string
+    }
+
+    const onClickSum = () => {
+        // console.log(typeof x) // check type of variable
+        // var tmp = Number(x) 
+        // console.log(typeof tmp)
+        var sum = Number(x) + Number(y);
+        setResult("Sum = "+sum)
+    }
+
+    const onClickSub = () => {
+        // var result = Number(x) - Number(y);
+        setResult("Sub = "+(Number(x) - Number(y)) )
+    }
+
+    const toCapitalize  = (string) => {
+       return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    const onClickOperation = (type) => {
+        // console.log(type)
+        // if ,else if
+        // switch, case
+        var data = 0;
+        var dataX = Number(x), dataY=Number(y)
+        // if(type == "sum"){
+        //     data = dataX + dataY
+        // }else if(type == "sub"){
+        //     data = dataX - dataY
+        // }else if(type == "mul"){
+        //     data = dataX * dataY
+        // }else if(type == "dev"){
+        //     data = dataX / dataY
+        // }
+
+        switch(type){
+            case "sum" : data = dataX + dataY; break; 
+            case "sub" : data = dataX - dataY; break; 
+            case "mul" : data = dataX * dataY; break; 
+            case "dev" : data = dataX / dataY; break; 
+        }
+
+
+        setResult(type.toUpperCase() + " = "+data )
+    }
+
+    // React Native build Mobile Android and IOS
+    const onClicAddBox = () => {
+        const tmp = box;
+        console.log(tmp)
+        tmp.push(1)
+        setBox([...tmp])
+    }
+
+    return (
+        <div>
+            <h1>Demo Box</h1>
+            <button onClick={onClicAddBox}>Add Box</button>
+            {box.map((item,index)=>{
+                return (
+                    <div
+                        style={{
+                            width : 30,
+                            height : 30 ,
+                            backgroundColor : "pink",
+                            margin : 5
+                        }}
+                    >
+                        {index + 1}
+                    </div>
+                )
+            })}
+            <hr/>
+           <h1>React State & Component</h1>
+            <input 
+                placeholder="username" 
+                onChange={onChangeUsername}
+            />
+           <input 
+                placeholder="password" 
+                onChange={onChangePassword}
+            />
+           <button onClick={onLogin}>Login</button>
+           <hr/>
+           <h1>Operation</h1>
+            <input 
+                placeholder="Value x" 
+                onChange={onChageX}
+            />
+             <input 
+                placeholder="Value y" 
+                onChange={onChageY}
+            />
+            <h1>Result : {result}</h1>
+            <button onClick={()=>onClickOperation("sum")}>Sum</button>
+            <button onClick={()=>onClickOperation("sub")}>Sub</button>
+            <button onClick={()=>onClickOperation("mul")}>Mul</button>
+            <button onClick={()=>onClickOperation("dev")}>Dev</button>
+           <hr/>
+           <h1>name: {name}</h1>
+           <h1>gender: {gender}</h1>
+           <h1>age: {age}</h1>
+           <h1>course: {course.length}</h1>
+           <h1>course[0]: {course[0]}</h1>
+           <h1>course[1]: {course[1]}</h1>
+           <h1>course[2]: {course[2]}</h1>
+           <h1>product: {product.id}-{product.pname}-{product.price}$-{product.qty}-{product.qty*product.price}$ </h1>
+
+
+           <button onClick={onChangeInfo}>Change User Info</button>
+
+        </div>
+    )
+}
+
+export default HomePage

@@ -1,0 +1,99 @@
+import product from "../../component/data/product";
+import image from "../../assets/logo/nit.jpeg"
+import {AiFillHome,} from "react-icons/ai"
+import {BsFill1CircleFill,BsFillArrowUpCircleFill} from "react-icons/bs"
+
+
+class Person {
+    constructor(){
+        this.name = "Som"
+        this.gender = "Male"
+    }
+}
+
+function HomePage (){
+    const PI = 3.14
+    var x = 1000;
+    var y = 10.3;
+    var fx = x  + "2"; 
+    var name = 'Nara'
+    var z = true // true/false
+
+
+    var arrCourse = [] // empty array
+    arrCourse = ["C++","C#","React","ReactNative",23] // element
+    const arrayNumberTest = [2,3,4,5,6] // element
+    arrayNumberTest[0] = 100;
+    // object Object 
+    const objTest = {
+        x : 100,
+        y : 200
+    }
+
+
+
+    var objePerson = new Person() // create from class 
+    objePerson.name = "Boran"
+    objePerson.gender = "Male"
+
+
+
+    // var productInfo = product.barcode +", "+ product.name + ", "+product.price+"$ , "+product.qty+"PC"
+
+    const ArrCourse = ['C++','Java','C#','PHP']
+
+    // render 
+    return (
+        <div style={{padding:20}}>
+            <AiFillHome  style={{fontSize:44,color:'red',marginRight:20}} />
+            <BsFill1CircleFill />
+            <BsFillArrowUpCircleFill />
+            <h1>List Course</h1>
+            {ArrCourse.map((item,index)=>(
+                <div key={index}>
+                    <h1>{item}</h1>
+                </div>
+            ))}
+
+            <h1>List Product</h1>
+            <div style={{padding:10,display:'flex'}}>
+                {product.map((item,index)=>(
+                    <div key={index} style={{padding:20,backgroundColor:'#eee',margin:5,borderRadius:10}}>
+                        <div>
+                            <img src={item.image}
+                                style={{width:200,height:200}}
+                            />
+                        </div>
+                        <div style={{color:"#000",fontSize:18,fontWeight:'bold'}}>{index+1}. {item.barcode}-{item.name}</div>
+                        <div>${item.price}</div>
+                        <div>{item.qty}PCS</div>
+                        <div style={{display:"flex"}}>
+                            {item.color.map((item1,index1)=>(
+                                <div style={{width:42,height:42,backgroundColor:item1,margin:1}} key={index1}>{item1}</div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+
+                {product.map((item,index)=>(
+                    <div key={index}>
+                        <div style={{color:"#FFF",fontSize:22}}>{item.barcode}-{item.name}</div>
+                    </div>
+                ))}
+            </div>
+
+           <h1>x = {x}</h1>
+           <h1>y = {y}</h1>
+           <h1>fx = {fx}</h1>
+           <h1>name = {name}</h1>
+           <h1>x = {z+""}</h1>
+           <h1>arrCourse 0 = {arrCourse[0]}</h1>
+           <h1>arrCourse length = {arrCourse.length}</h1>
+           <h1>objText X = {objTest.x} & Y = {objTest.y}</h1>
+           {/* <h1>Product barcode = {product.barcode}</h1> */}
+           {/* <h1>productInfo : {productInfo}</h1> */}
+        </div>
+    )
+}
+
+export default HomePage
